@@ -10,6 +10,13 @@ class validator {
     //iniciar a validação de todos os campos//
     validate(form) {
 
+        // resgata todas as validações
+        let currentValidations= document.querySelectorAll('form .error-validation');
+
+        if(currentValidations.length > 0) {
+            this.cleanValidations(currentvalidations);
+        }
+
         //pegar os inputs
         let inputs = form.getElementByTagName('input');
 
@@ -52,6 +59,16 @@ class validator {
         if(inputLength < minValue){
             console.log(errorMessage);
         }
+
+    //verifica se um input passou do limite de caracteres
+    maxlength(input, value){
+
+        let inputLength = input.value.length;
+        let errorMessage = 'O campo precisa ter pelo menos ${maxValue} caracteres';
+
+        if(inputLength < minValue){
+            console.log(errorMessage);
+    }
     }
 
     //método para imprimir mensagens de erro na tela
@@ -66,6 +83,15 @@ class validator {
         template.classList.remove('template');
 
         inputParent.appendChild('template');
+
+
+        //limpa as validações da tela
+        cleanValidations(validations){ 
+
+            this.validations.forEach(el => el.remove());
+
+
+        }
 
 
     }
