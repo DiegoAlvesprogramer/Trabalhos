@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+
+<body>
+        <div id="main-container">
+    <h1>Sistema de cadastro</h1><hr><br>
+<form id="registro" method="post" action="cadastro.php">
+    <div class="full-box spacing">
+        <label for="name">NOME:</label>
+        <input type="text" id="fname" name="fname" data-min-length="3">
+    </div>
+    <div class="half-box">
+        <label for="lastname">SOBRENOME:</label>
+        <input type="text" id="lastname" name="lastname" maxlength="40">
+    </div>
+    <div class="full-box">
+        <label for="email">E-MAIL:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+    </div>
+    <div class="half-box">
+        <label for="lname">TELEFONE:</label>
+        <input type="tel" name="txt_telephone" placeholder="Ex: 11(12345-6789)" data-min-length=11 maxlength="11">
+    </div> 
+    <div class="half-box">
+        <label for="CPF">CPF:</label>
+        <input id="cpf1" type="text" name="txt_cpf" data-min-length="11"> <br>
+    </div>
+    <div class="half-box">
+        <label for="user">USUÁRIO:</label>
+        <input type="text" name="txt_usuario"><br>
+    </div>
+    <div class="half-box spacing">
+        <label for="password">SENHA:</label>
+        <input type="password" name="password" id="password" placeholder="DIGITE SUA SENHA"><br><br>
+    </div>
+    <div class="half-box">
+        <label for="passconfirmation">CONFIRME SUA SENHA:</label>
+        <input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="DIGITE SUA SENHA"><br>
+    </div>
+    <div class="full-box">
+        <input type="checkbox" id="agreement" name="agreement" >
+        <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label><br><br>
+    </div>
+    <div class="half-box">
+    <input type="submit" id="btn1" onclick='javascript:validation()'></input><br><br>
+    </div>
+</form>
+</div>
+<p class="error-validation template"></p>
+<script src="Validation.js"></script>
+
+
+</body>
+
+</html>
